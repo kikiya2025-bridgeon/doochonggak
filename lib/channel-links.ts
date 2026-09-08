@@ -34,12 +34,13 @@ export const channelLinks: ChannelLink[] = [
     cta: '인스타그램 바로가기',
   },
   {
-    name: 'Naver',
-    title: '네이버에서 두총각 만나기',
-    description: '매장 정보와 두총각 관련 정보를 네이버에서 확인해보세요.',
+    name: 'Naver Place',
+    title: '네이버 플레이스에서 두총각 만나기',
+    description: '매장 정보와 두총각 관련 정보를 네이버 플레이스에서 확인해보세요.',
     channel: 'naverPlace',
     icon: MapPin,
     image: photos.store,
-    cta: '네이버플레이 바로가기',
+    cta: '네이버 플레이스 바로가기',
   },
 ];
+

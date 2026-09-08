@@ -126,7 +126,7 @@ export default function Home() {
       </section>
 
       <section className="section store-section" aria-label="김해 매장">
-        <div className="container store-grid"><div><SectionTitle eyebrow="MEET US IN GIMHAE" title="김해에서 만나요." description="따뜻한 한 판과 반가운 사람들이 기다리는 곳." /><dl className="store-details"><div><dt><MapPin size={20} aria-hidden="true" /> 위치</dt><dd>{siteConfig.store.address || '경상남도 김해 · 상세 주소 안내 예정'}</dd></div><div><dt><Clock size={20} aria-hidden="true" /> 영업시간</dt><dd>{siteConfig.store.hours || '영업시간 안내 준비 중'}</dd></div></dl><CTAButton href="/store" variant="outline">매장안내</CTAButton></div><BrandImage photo={photos.store} /></div>
+        <div className="container store-grid"><div><SectionTitle eyebrow="MEET US IN GIMHAE" title="김해에서 만나요." description="따뜻한 한 판과 반가운 사람들이 기다리는 곳." /><dl className="store-details"><div><dt><MapPin size={20} aria-hidden="true" /> 위치</dt><dd>{siteConfig.store.address || '경상남도 김해 · 상세 주소 안내 예정'}</dd></div><div><dt><Clock size={20} aria-hidden="true" /> 영업시간</dt><dd>{siteConfig.store.hours || '영업시간 안내 준비 중'}</dd></div></dl><div className="flex flex-wrap gap-3"><CTAButton href="/store" variant="outline">매장안내</CTAButton><CTAButton channel="naverPlace" variant="outline">네이버 지도에서 보기</CTAButton></div></div><BrandImage photo={photos.store} /></div>
       </section>
 
       <section className={`final-cta ${styles.final}`} aria-labelledby="final-title">
@@ -136,4 +136,5 @@ export default function Home() {
     </main>
   );
 }
+
 

@@ -1,14 +1,21 @@
-// Official addresses are intentionally unset. Set these values to enable external links.
-export const SMART_STORE_URL = '';
-export const YOUTUBE_URL = '';
-export const INSTAGRAM_URL = '';
-export const NAVER_PLACE_URL = '';
+// Official channel URLs. Keep all channel destinations centralized here.
+export const externalLinks = {
+  smartStore: 'https://smartstore.naver.com/doochongak',
+  youtube: 'https://www.youtube.com/@doochonggakTV',
+  instagram: 'https://www.instagram.com/doochonggak/',
+  naverPlace: 'https://naver.me/5OloiE2O',
+} as const;
+// Compatibility aliases for existing consumers; values live only in externalLinks.
+export const SMART_STORE_URL = externalLinks.smartStore;
+export const YOUTUBE_URL = externalLinks.youtube;
+export const INSTAGRAM_URL = externalLinks.instagram;
+export const NAVER_PLACE_URL = externalLinks.naverPlace;
 export const KAKAO_URL = '';
 export const DAANGN_URL = '';
 export const siteConfig = {
     name: '두총각 닭갈비', description: '김해에서 시작된 두총각 닭갈비. 맛있는 음식, 더 즐거운 이야기로 찾아갑니다.',
     url: '',
-    links: { smartStore: SMART_STORE_URL, youtube: YOUTUBE_URL, instagram: INSTAGRAM_URL, naverPlace: NAVER_PLACE_URL, kakao: KAKAO_URL, daangn: DAANGN_URL },
+    links: { ...externalLinks, kakao: KAKAO_URL, daangn: DAANGN_URL } as const,
     store: { region: '경상남도 김해', address: '', phone: '', hours: '', parking: '' },
     business: { company: '', owner: '', registrationNumber: '' },
 };
@@ -20,4 +27,6 @@ export const navigation = [
     { href: '/store', label: '매장안내', description: '김해에서 만나는 두총각 닭갈비. 매장 정보와 오시는 길을 준비하고 있습니다.' },
     { href: '/news', label: '소식', description: '두총각의 공지, 이벤트, 미디어 소식을 전하는 공간입니다.' },
 ];
+
+
 

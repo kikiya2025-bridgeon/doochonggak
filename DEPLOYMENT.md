@@ -1,41 +1,33 @@
-# GitHub / Vercel 업로드 안내
+# Vercel Production 링크 수정 배포 안내
 
-현재 두총각 닭갈비 홈페이지의 Next.js + TypeScript + Tailwind CSS 소스입니다.
-이 ZIP은 소스 전달용이며 GitHub 업로드나 Vercel 배포는 아직 실행하지 않았습니다.
+## 조사 결과
+현재 URL은 lib/site-config.ts의 externalLinks 코드 상수로 관리합니다.
+.env.local, process.env, NEXT_PUBLIC_ 환경변수에 의존하지 않습니다.
+CTAButton은 선택한 URL이 비어 있을 때만 준비 안내 버튼을 표시합니다.
+이번 소스는 빌드 후 생성된 Production HTML까지 검사하며 4개 채널 모두 실제 링크로 렌더링됩니다.
 
-## GitHub
-1. ZIP을 압축 해제합니다.
-2. 새 GitHub 저장소를 만들고 압축 해제된 파일을 업로드하거나 Git으로 push합니다.
-3. package.json과 app 폴더가 저장소 최상위에 위치하도록 합니다.
-4. 숨김 파일인 .gitignore도 포함합니다. ZIP 자체를 올리는 대신 압축을 푼 소스를 올려주세요.
+이전에 전달한 ZIP은 실제 URL 연결 작업 전에 생성되었습니다. 그 소스를 올렸다면 빈 URL과 준비 안내가 배포됩니다.
+현재 Vercel 주소나 배포 커밋을 확인하지 못했으므로 실제 배포본의 원인은 확정하지 않았습니다.
 
-## Vercel
-1. Vercel에서 새 프로젝트를 만들고 해당 GitHub 저장소를 연결합니다.
-2. Framework Preset은 Next.js, Root Directory는 package.json이 있는 폴더를 선택합니다.
-3. Install Command는 pnpm install --frozen-lockfile, Build Command는 pnpm build를 사용합니다.
-4. Output Directory는 Next.js 자동 설정을 유지합니다.
-5. 배포 후 HOME 및 /dakgalbi, /story, /content, /store, /news를 확인합니다.
+## 재배포
+1. 이 ZIP을 풀어 GitHub 저장소의 기존 소스를 최신 파일로 교체하고 커밋·push하세요.
+2. 반드시 lib/site-config.ts, package.json, scripts/verify-production-links.mjs도 업로드하세요.
+3. Vercel의 프로젝트가 위 저장소·브랜치·프로젝트 폴더를 사용하는지 확인하세요.
+4. 새 커밋으로 Production 배포를 실행하세요. 기존 커밋의 Redeploy만 하면 예전 소스가 다시 배포될 수 있습니다.
+5. Build Command는 npm run build 또는 pnpm run build로 설정하세요. next build만 직접 지정하면 후속 검사가 생략됩니다.
+6. 로그에서 다음 문구를 확인하세요:
+   Production links verified: 4 official channels, 6 routes, anchor destinations and new-tab attributes.
+7. 새 Production 배포 주소를 열어 Header/Hero/상품/중간/마지막/모바일 주문 버튼, 채널 카드 3개, Footer, 지도 버튼을 확인하세요.
 
-## 로컬 실행
-Node.js와 pnpm이 설치된 환경에서:
+외부 URL용 환경변수 추가는 필요하지 않습니다. 카카오·당근만 URL 미확정으로 기존 준비 안내를 유지합니다.
+사이트 도메인, 주소, 상품 정보 등 미확정 콘텐츠는 이번 링크 문제와 별개입니다.
 
-pnpm install --frozen-lockfile
-pnpm dev
+## 검증
+- next build 및 TypeScript 통과
+- 빌드 산출물의 6개 경로 링크 자동 검사 통과
+- next start Production 서버의 데스크톱·390px 모바일 링크 확인
+- HOME의 확정 채널 fallback 버튼 없음
+- Store 지도 링크 확인
 
-프로덕션 빌드 확인:
-
-pnpm build
-
-## 실제 자료 교체
-- lib/site-config.ts: 스마트스토어, YouTube, Instagram, 네이버 플레이스 등 공식 URL
-- lib/channel-links.ts: HOME 바로가기 카드 데이터
-- lib/dakgalbi/products.ts: 제품명, 구성, 가격, 이미지
-- lib/dakgalbi/content.ts: 특징, 조리법, 레시피, 리뷰
-- lib/content.ts 및 public/images/: 현재 임시 목업 이미지와 공통 콘텐츠
-
-현재 공식 외부 URL은 비어 있어 클릭 시 준비 안내를 표시합니다.
-사진과 상품·리뷰 정보는 공식 자료로 교체할 예정인 상태입니다.
-
-## 포함 / 제외
-포함: 앱 소스, 설정 파일, 의존성 잠금 파일, 이미지, 프로젝트 안내.
-제외: node_modules, .next, .pnpm-store, .git, 환경변수 파일, 로컬 캐시.
+이 ZIP에는 소스와 로컬 이미지가 포함되며 node_modules, .next, .git, 환경변수 파일은 제외됩니다.
+GitHub에는 ZIP 자체가 아니라 압축을 푼 파일을 올려주세요.
