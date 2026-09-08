@@ -1,0 +1,102 @@
+.home :global(.hero-photo) { height: 100%; }
+.home :global(.hero-copy) .slogan { color: #f4eee3; font-size: 20px; font-weight: 700; line-height: 1.5; letter-spacing: -.025em; }
+.trust { background: #11110f; color: white; }
+.trustInner { border-top-color: #ffffff26; }
+.productsSection { background: var(--cream); }
+.pending { font-size: 13px; color: var(--muted); margin: -10px 0 28px; }
+.products { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px; }
+.products article { min-width: 0; }
+.productImage { aspect-ratio: 1.37; }
+.index { display: block; color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: .14em; margin: 21px 0 9px; }
+.products h3 { font-size: 24px; }
+.products article > p { margin-top: 10px; font-size: 15px; color: var(--muted); }
+.composition { border-block: 1px solid var(--line); padding: 15px 0; margin: 20px 0; font-size: 14px; }
+.composition div { display: flex; gap: 18px; }
+.composition dd { color: var(--muted); margin: 0; }
+.purchase { position: relative; background: #17130f; color: white; }
+.purchaseImage { position: absolute; top: 0; right: 0; width: 60%; height: 100%; overflow: hidden; }
+.purchaseShade { position: absolute; inset: 0; background: linear-gradient(90deg,#17130f 14%,#17130fd9 42%,#17130f22 100%); }
+.purchaseCopy { position: relative; padding-block: 64px; }
+.purchaseCopy :global(.eyebrow) { color: #d3c6b0; font-size: 11px; }
+.purchase h2 { font-size: 35px; font-weight: 800; line-height: 1.4; margin-bottom: 25px; }
+.whyGrid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 65px; align-items: center; }
+.whyImage { aspect-ratio: 1; }
+.features { display: grid; gap: 19px; }
+.features article { border-top: 1px solid var(--line); padding-top: 17px; display: flex; gap: 20px; }
+.features article > span { color: var(--red); font-size: 13px; padding-top: 3px; }
+.features h3 { font-size: 21px; }
+.features p { font-size: 14px; color: var(--muted); margin-top: 7px; }
+.reviewSection { background: var(--cream); }
+.reviewEmpty { text-align: center; border-block: 1px solid var(--line); padding: 34px 20px; }
+.reviewEmpty svg { margin: 0 auto 16px; color: #8b8170; }
+.reviewEmpty p { font-size: 19px; }
+.reviewEmpty > span { display: block; color: var(--muted); margin-top: 10px; font-size: 14px; }
+.reviews { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+.reviews figure { margin: 0; border-top: 1px solid var(--line); padding-block: 20px; }
+.reviews blockquote { margin: 0; }
+.reviews figcaption { margin-top: 14px; color: var(--muted); }
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 28px; margin: 40px 0 24px; padding: 0; }
+.steps li { border-top: 1px solid var(--line); padding-top: 21px; }
+.steps li > span { display: block; color: var(--red); font-size: 36px; font-weight: 750; line-height: 1; margin-bottom: 22px; }
+.steps h3 { font-size: 21px; }
+.steps p { font-size: 15px; color: var(--muted); margin-top: 11px; }
+.cookingNote { font-size: 13px; text-align: center; color: var(--muted); margin-top: 30px; }
+.recipeLink { text-align: center; margin-top: 25px; }
+.contentSection { padding-top: 24px; }
+.final { padding-block: 90px; }
+.final h2 { font-size: 40px; }
+.final .finalSlogan { font-size: 20px; font-weight: 650; color: white; line-height: 1.55; margin: 22px 0 29px; }
+.finalOrder { min-height: 58px; padding: 17px 28px; font-size: 16px; }
+@media(max-width: 900px) {
+  .products { gap: 20px; }
+  .whyGrid { gap: 32px; }
+  .whyImage { aspect-ratio: .75; }
+  .steps { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 30px; }
+  .purchase h2 { font-size: 29px; }
+}
+@media(max-width: 600px) {
+  .home :global(.hero-inner) { min-height: 575px; }
+  .home :global(.hero-photo) { height: 340px; }
+  .home :global(.hero-copy) { padding-top: 195px; }
+  .home :global(.hero-copy) .slogan { font-size: 18px; margin-top: 15px; line-height: 1.45; }
+  .home :global(.hero-actions) { margin-top: 18px; }
+  .trustInner { gap: 20px 12px; }
+  .trustInner :global(strong) { font-size: 13px; }
+  .trustInner p :global(span) { font-size: 11px; }
+  .products { grid-template-columns: 1fr; gap: 35px; }
+  .products h3 { font-size: 23px; }
+  .pending { margin-top: 0; font-size: 13px; }
+  .productImage { aspect-ratio: 1.37; }
+  .purchaseImage { width: 100%; height: 265px; }
+  .purchaseShade { background: linear-gradient(0deg,#17130f 16%,#17130fd9 48%,#17130f18 100%); }
+  .purchaseCopy { padding-top: 192px; padding-bottom: 35px; }
+  .purchase h2 { font-size: 26px; margin-bottom: 23px; }
+  .whyGrid { grid-template-columns: 1fr; gap: 28px; }
+  .whyImage { aspect-ratio: 1.45; }
+  .features { gap: 20px; }
+  .features h3 { font-size: 21px; }
+  .features p { font-size: 15px; }
+  .reviewEmpty { padding: 28px 0; }
+  .reviewEmpty p { font-size: 17px; }
+  .reviews { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; gap: 23px; margin-top: 30px; }
+  .steps li { position: relative; padding-left: 56px; }
+  .steps li > span { position: absolute; left: 0; top: 23px; font-size: 29px; }
+  .steps h3 { font-size: 22px; }
+  .cookingNote { text-align: left; }
+  .contentSection { padding-top: 10px; }
+  .final { padding-block: 66px; }
+  .final h2 { font-size: 31px; }
+  .final .finalSlogan { font-size: 18px; }
+  .finalOrder { min-height: 56px; font-size: 14px; padding: 16px 20px; }
+}
+@media(max-width: 360px) {
+  .home :global(.hero-copy) { padding-top: 175px; }
+  .home :global(.hero-photo) { height: 300px; }
+  .trustInner :global(strong) { font-size: 12px; }
+  .trustInner p :global(span) { font-size: 10px; }
+}
+/* Preserve the intended four-line main message on narrow screens. */
+@media(max-width: 600px) {
+  .home :global(.hero h1 br:nth-of-type(2)) { display: initial; }
+}

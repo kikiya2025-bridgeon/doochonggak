@@ -1,0 +1,116 @@
+.page { color: var(--ink); }
+.page h2 { text-wrap: balance; }
+.page :global(.container) { max-width: 1240px; }
+.section { padding: 84px 0; }
+.hero { padding: 32px 0 44px; background: var(--cream); }
+.heroGrid { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 44px; }
+.heroCopy { padding: 16px 0; }
+.heroCopy :global(.eyebrow) { color: var(--red); font-size: 11px; }
+.heroCopy h1 { font-size: clamp(34px, 3.4vw, 49px); font-weight: 650; line-height: 1.25; letter-spacing: -.055em; }
+.heroCopy h1 strong { font-weight: 850; }
+.heroCopy p { color: var(--muted); margin: 22px 0 28px; font-size: 16px; }
+.heroImage { position: relative; aspect-ratio: 1.37; min-width: 0; }
+.photoLabel { position: absolute; bottom: 18px; right: 20px; font-size: 12px; color: #fff; padding: 5px 10px; background: #15130dd4; }
+.order { min-height: 50px; }
+.pending { color: var(--muted); font-size: 13px; margin: -15px 0 28px; }
+.products { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px; }
+.product { min-width: 0; }
+.productImage { aspect-ratio: 1.37; }
+.index { display: block; color: var(--red); font-size: 11px; letter-spacing: .14em; margin: 23px 0 10px; font-weight: 650; }
+.product h3 { font-size: 24px; }
+.product > p, .recipes article > p { color: var(--muted); font-size: 15px; margin-top: 10px; }
+.composition { margin: 21px 0; padding: 15px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 14px; }
+.composition div { display: flex; gap: 20px; }
+.composition dd { margin: 0; color: var(--muted); }
+.product .order { font-size: 13px; }
+.why { background: var(--cream); }
+.whyGrid { display: grid; grid-template-columns: .85fr 1.3fr; gap: 72px; }
+.whyGrid :global(.section-title) { max-width: 320px; }
+.features { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 34px 36px; }
+.features article { border-top: 1px solid #d4d0c6; padding-top: 23px; }
+.features svg { color: var(--ink); margin-bottom: 17px; }
+.features h3 { font-size: 21px; }
+.features p { color: var(--muted); font-size: 15px; margin-top: 12px; }
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); padding: 0; margin: 42px 0 30px; gap: 30px; }
+.steps li { border-top: 1px solid var(--line); padding-top: 20px; }
+.stepNumber { display: block; color: var(--red); font-size: 36px; font-weight: 750; line-height: 1; margin-bottom: 22px; letter-spacing: -.05em; }
+.steps h3 { font-size: 22px; }
+.steps p { font-size: 15px; color: var(--muted); margin-top: 12px; }
+.cookingNote { text-align: center; font-size: 13px; color: var(--muted); padding-top: 20px; }
+.recipeSection { background: var(--cream); }
+.recipes { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 22px; }
+.recipeImage { aspect-ratio: 1.28; }
+.recipePlaceholder { height: 100%; background: #ede9df; color: #797469; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; }
+.recipePlaceholder span { font-size: 13px; }
+.recipes h3 { font-size: 22px; }
+.recipes .index { margin-top: 18px; }
+.recipeLink { text-align: center; margin-top: 37px; }
+.reviewEmpty { text-align: center; padding: 37px 20px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.reviewEmpty svg { margin: 0 auto 18px; color: #8e887b; }
+.reviewEmpty p { font-size: 19px; }
+.reviewEmpty span { display: block; margin-top: 10px; font-size: 14px; color: var(--muted); }
+.reviews { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 25px; }
+.reviews figure { margin: 0; padding: 24px 0; border-top: 1px solid var(--line); }
+.reviews blockquote { margin: 0; }
+.reviews figcaption { color: var(--muted); margin-top: 14px; }
+.final { position: relative; background: #17130f; color: white; }
+.finalImage { position: absolute; top: 0; right: 0; width: 68%; height: 100%; overflow: hidden; }
+.finalShade { position: absolute; inset: 0; background: linear-gradient(90deg,#17130f 15%,#17130fe0 38%,#17130f25 100%); }
+.finalCopy { position: relative; padding-top: 74px; padding-bottom: 78px; }
+.finalCopy :global(.eyebrow) { color: #e0d2bc; font-size: 11px; }
+.final h2 { font-size: clamp(32px,3vw,44px); font-weight: 800; line-height: 1.32; }
+.final p { color: #dfd9ce; margin: 20px 0 28px; }
+.finalOrder { min-height: 56px; padding: 16px 23px; font-size: 15px; }
+@media (max-width: 1000px) {
+  .heroGrid { gap: 25px; }
+  .heroCopy h1 { font-size: 36px; }
+  .heroCopy p { font-size: 14px; }
+  .heroCopy :global(.eyebrow) { font-size: 10px; }
+  .products { gap: 20px; }
+  .product .order { font-size: 12px; padding-inline: 12px; gap: 6px; }
+  .whyGrid { grid-template-columns: 1fr 1.4fr; gap: 32px; }
+  .features { gap: 28px 24px; }
+  .recipes { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px 22px; }
+  .steps { gap: 22px; }
+  .steps h3 { font-size: 19px; }
+}
+@media (max-width: 700px) {
+  .section { padding: 52px 0; }
+  .page :global(.container) { width: calc(100% - 40px); }
+  .hero { padding: 20px 0 28px; }
+  .heroGrid { display: flex; flex-direction: column; gap: 22px; align-items: stretch; }
+  .heroImage { order: -1; width: 100%; aspect-ratio: 1.65; }
+  .heroCopy { padding: 0; }
+  .desktopBreak { display: none; }
+  .heroCopy h1 { font-size: clamp(27px,7.5vw,38px); line-height: 1.27; }
+  .heroCopy :global(.eyebrow) { font-size: 10px; margin-bottom: 10px; }
+  .heroCopy p { font-size: 14px; margin: 13px 0 18px; }
+  .photoLabel { font-size: 11px; bottom: 12px; right: 12px; }
+  .products { grid-template-columns: 1fr; gap: 38px; }
+  .productImage { aspect-ratio: 1.37; }
+  .product .order { font-size: 14px; padding-inline: 20px; }
+  .pending { margin-top: -10px; font-size: 13px; }
+  .whyGrid { grid-template-columns: 1fr; gap: 4px; }
+  .whyGrid :global(.section-title) { max-width: none; }
+  .features { grid-template-columns: 1fr; gap: 26px; }
+  .features article { position: relative; padding-left: 45px; padding-top: 20px; }
+  .features svg { position: absolute; left: 0; top: 21px; width: 25px; }
+  .features p { margin-top: 8px; }
+  .steps { grid-template-columns: 1fr; gap: 26px; margin-top: 30px; }
+  .steps li { position: relative; padding-left: 58px; padding-top: 23px; }
+  .stepNumber { position: absolute; left: 0; top: 25px; font-size: 29px; }
+  .steps h3 { font-size: 22px; }
+  .steps p { margin-top: 9px; }
+  .cookingNote { text-align: left; padding-top: 0; }
+  .recipes { grid-template-columns: 1fr; gap: 30px; }
+  .recipeImage { aspect-ratio: 1.65; }
+  .reviewEmpty { padding: 29px 0; }
+  .reviewEmpty p { font-size: 17px; }
+  .reviews { grid-template-columns: 1fr; }
+  .finalImage { width: 100%; height: 280px; }
+  .finalShade { background: linear-gradient(0deg,#17130f 14%,#17130fd4 48%,#17130f12 100%); }
+  .finalCopy { padding-top: 205px; padding-bottom: 40px; }
+  .final h2 { font-size: 30px; }
+  .final p { font-size: 14px; margin: 15px 0 22px; }
+  .finalOrder { white-space: normal; min-height: 56px; font-size: 13px; padding: 14px 16px; gap: 8px; }
+}
