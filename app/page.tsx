@@ -10,7 +10,10 @@ import { enjoySteps, homeFeatures, homeProducts, homeReviews, homeReviewState, t
 import styles from './home.module.css';
 import { QuickLinks } from '@/components/quick-links';
 
-export const metadata = pageMetadata('홈', siteConfig.description);
+export const metadata = {
+  ...pageMetadata('홈', siteConfig.description),
+  title: { absolute: '두총각 닭갈비' },
+};
 
 export default function Home() {
   const trustIcons = [Leaf, ChefHat, CookingPot, Truck];
