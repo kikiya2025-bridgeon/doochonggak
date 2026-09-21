@@ -6,7 +6,7 @@ import { SectionTitle } from '@/components/section-title';
 import { photos, videos } from '@/lib/content';
 import { siteConfig } from '@/lib/site-config';
 import { pageMetadata } from '@/lib/metadata';
-import { enjoySteps, homeFeatures, homeProducts, homeReviews, homeReviewState, trustPoints } from '@/lib/home-content';
+import { enjoySteps, homeFeatures, homeHeroPhoto, homeProducts, homeReviews, homeReviewState, trustPoints } from '@/lib/home-content';
 import styles from './home.module.css';
 import { QuickLinks } from '@/components/quick-links';
 
@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <main id="main" className={styles.home}>
       <section className="hero" aria-labelledby="home-title">
-        <div className="hero-photo"><BrandImage photo={photos.hero} priority /></div>
+        <div className="hero-photo"><BrandImage photo={homeHeroPhoto} priority /></div>
         <div className="hero-shade" />
         <div className="container hero-inner">
           <div className="hero-copy">
@@ -139,5 +139,3 @@ export default function Home() {
     </main>
   );
 }
-
-

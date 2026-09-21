@@ -1,5 +1,13 @@
 import { products } from '@/lib/dakgalbi/products';
+import type { Photo } from '@/lib/content';
 import { features, reviews, reviewState } from '@/lib/dakgalbi/content';
+
+// HOME-only photograph; keep the other sections' images unchanged.
+export const homeHeroPhoto: Photo = {
+  src: '/images/home-hero-cooking.webp',
+  alt: '김이 오르는 팬에서 두 개의 나무 주걱으로 볶는 두총각 닭갈비',
+  position: 'var(--hero-image-position, 50% 85%)',
+};
 
 // Reuse the verified/placeholder state of the product page instead of inventing
 // a second product catalog or customer reviews for HOME.

@@ -1,4 +1,4 @@
-.home :global(.hero-photo) { height: 100%; }
+.home :global(.hero-photo) { height: 100%; --hero-image-position: 50% 75%; }
 .home :global(.hero-copy) .slogan { color: #f4eee3; font-size: 20px; font-weight: 700; line-height: 1.5; letter-spacing: -.025em; }
 .trust { background: #11110f; color: white; }
 .trustInner { border-top-color: #ffffff26; }
@@ -56,7 +56,7 @@
 }
 @media(max-width: 600px) {
   .home :global(.hero-inner) { min-height: 575px; }
-  .home :global(.hero-photo) { height: 340px; }
+  .home :global(.hero-photo) { height: 340px; --hero-image-position: 50% 85%; }
   .home :global(.hero-copy) { padding-top: 195px; }
   .home :global(.hero-copy) .slogan { font-size: 18px; margin-top: 15px; line-height: 1.45; }
   .home :global(.hero-actions) { margin-top: 18px; }
