@@ -234,8 +234,9 @@ img {
   gap:27px
 }
 .desktop-nav a {
-  font-size:14px;
+  font-size:16px;
   font-weight:650;
+  white-space:nowrap;
   min-height:44px;
   display:flex;
   align-items:center
